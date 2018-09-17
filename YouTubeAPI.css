@@ -6,6 +6,9 @@
 
 header{
     padding-left: 18px;
+    margin-right: 0;
+    margin-left: 0;
+    text-align: center;
 }
 
 main{
