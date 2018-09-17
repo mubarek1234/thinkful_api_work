@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang = "en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
@@ -12,14 +12,16 @@
   <body>
     <header role="banner"><h1>Youtube API</h1></header>
     <main role="main">
+      <div class="numberOfResults"></div>
       <form>
           <fieldset>
-            <legend><h2>Search for a youtube video</h2></legend>
-              <input class = "insertInfo"></input>
+              <legend><h2>Search for a youtube video</h2></legend>
+              <label for="inputFromUser">Search in here!</label>
+              <input class = "insertInfo">
               <button type = "submit">Submit</button>
             </fieldset>
       </form>
-        <div class="js-search-results">
+        <div class="js-search-results" aria-live="assertive" hidden>
         </div>
     </main>
       <script src="youTubeAPI.js"></script>

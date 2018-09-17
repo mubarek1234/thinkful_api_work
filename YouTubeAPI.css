@@ -24,6 +24,10 @@ form{
     display: flex;
 }
 
+label{
+    display:block;
+    padding-bottom: 10px;
+}
 
 fieldset{
     border: none;
