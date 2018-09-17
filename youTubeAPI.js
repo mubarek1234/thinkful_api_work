@@ -24,15 +24,10 @@ function get_YouTube_API(curr, callback){
 function renderResult(items){
 
   if(items.id.kind === 'youtube#video'){
-  console.log(items.snippet.thumbnails.medium.url);
-  console.log(items.id.videoId);
   console.log(items);
-  
   return `<div>
       <a href = "https://www.youtube.com/watch?v=${items.id.videoId}"><img src = "${items.snippet.thumbnails.medium.url}" alt = "Thumbnail of pic"></a>
     </div>`; 
-  //this returns the urls to the possible thumbnails that we use
-  //now we need to get the link to the video 
   }
 } 
 

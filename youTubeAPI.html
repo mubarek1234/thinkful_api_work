@@ -10,13 +10,19 @@
    crossorigin="anonymous"></script>
   </head>
   <body>
-    <h1>Search for a youtube video</h1>
-    <form>
-        <input class = "insertInfo"></input>
-         <button type = "submit">Submit</button>
-    </form>
-      <div class="js-search-results">
-      </div>
+    <header role="banner"><h1>Search for a youtube video</h1></header>
+  
+    <main role="main">
+      <form>
+          <fieldset>
+            <legend><h2>Search</h2></legend>
+              <input class = "insertInfo"></input>
+              <button type = "submit">Submit</button>
+            </fieldset>
+      </form>
+        <div class="js-search-results">
+        </div>
+    </main>
       <script src="youTubeAPI.js"></script>
   </body>
 </html>
