@@ -1,3 +1,4 @@
+'use strict'
 const youTube_URL = "https://www.googleapis.com/youtube/v3/search";
 let numOfResults = 0;
 let checkBoolean = false;
@@ -15,7 +16,8 @@ function get_YouTube_API(curr, callback){
     data : {
       part:'snippet',
       key:'AIzaSyA_btGl7SDfpHrSXexVkeSNiXW5111kg0w',
-      q: `${curr}`
+      q: `${curr}`,
+      type:'video'
     },
     dataType: 'json',
     type: 'GET',
@@ -27,14 +29,13 @@ function get_YouTube_API(curr, callback){
 }
 
 function renderResult(items){
-  if(items.id.kind === 'youtube#video'){
   console.log(items);
   numOfResults++;
   return `<div>
-      <a href = "https://www.youtube.com/watch?v=${items.id.videoId}"><img src = "${items.snippet.thumbnails.medium.url}" alt = "Thumbnail of pic"></a>
+      <a href = "https://www.youtube.com/watch?v=${items.id.videoId}" role="link" aria-roledescription="thumbnail link to the ${items.snippet.title} video"><img  src = "${items.snippet.thumbnails.medium.url}" 
+      alt = "${items.snippet.title}"></a>
     </div>`; 
     
-  }
   console.log(numOfResults);
 } 
 
@@ -56,7 +57,9 @@ function displayYouTubeSearchData(data) {
 
 function get_Input(){
   $("form").submit(function(event){
+    
     event.preventDefault();
+    $('button').attr('aria-pressed', true); 
     let curr = $('.insertInfo').val();
     get_YouTube_API(curr, displayYouTubeSearchData);
   });

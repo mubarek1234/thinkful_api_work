@@ -13,12 +13,11 @@
     <header role="banner"><h1>Youtube API</h1></header>
     <main role="main">
       <div class="numberOfResults"></div>
-      <form>
+      <form type="text" name="username" id="search-username">
           <fieldset>
               <legend><h2>Search for a youtube video</h2></legend>
-              <label for="inputFromUser">Search in here!</label>
-              <input class = "insertInfo">
-              <button type = "submit">Submit</button>
+              <label for="inputFromUser">Search in here!<input type="text" class = "insertInfo" required></label>
+              <label for="submitButton"><button role="button" type="submit" aria-pressed="false">Submit</button></label>
             </fieldset>
       </form>
         <div class="js-search-results" aria-live="assertive" hidden>
